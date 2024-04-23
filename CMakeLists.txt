@@ -9,10 +9,12 @@ set(PROJECT_INCLUDE_DIR ${PROJECT_DIR}/include)
 set(PROJECT_SOURCE_DIR ${PROJECT_DIR}/src)
 set(PROJECT_SOURCES
    ${PROJECT_SOURCE_DIR}/main.cpp)
-find_package(Vulkan REQUIRED)
+
+find_package(Vulkan)
+set(VULKAN_LIB_LIST "vulkan-1")
 include_directories(${PROJECT_INCLUDE_DIR})
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
-target_link_libraries(${PROJECT_NAME} Vulkan)
+target_link_libraries(${PROJECT_NAME} ${VULKAN_LIB_LIST})
 
 
 # include(FetchContent)
