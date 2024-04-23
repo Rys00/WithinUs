@@ -1,7 +1,6 @@
-#include <iostream>
 #include <vulkan/vulkan.h>
 
-int main() {
+VkResult vkInit() {
   VkApplicationInfo appInfo = {};
   appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
   appInfo.pApplicationName = "WithinUs";
@@ -14,8 +13,5 @@ int main() {
   VkInstance instance;
 
   VkResult result = vkCreateInstance(&instanceInfo, 0, &instance);
-  if (result == VK_SUCCESS) {
-    std::cout << "Successfully created vk instance!\n";
-  }
-  return 0;
+  return result;
 }
